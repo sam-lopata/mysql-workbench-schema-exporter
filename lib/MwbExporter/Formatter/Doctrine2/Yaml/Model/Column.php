@@ -38,7 +38,7 @@ class Column extends Base
             ->indent()
                 ->write('type: %s', $this->getDocument()->getFormatter()->getDatatypeConverter()->getType($this))
                 ->writeIf($this->isPrimary(), 'primary: true')
-                ->writeIf($this->parameters->get('isNotNull') == 1, 'notnull: true')
+                ->writeIf($this->parameters->get('isNotNull') == 1, 'nullable: false')
                 ->writeCallback(function(WriterInterface $writer, Column $_this = null) {
                     if ($_this->getParameters()->get('autoIncrement') == 1) {
                         $writer

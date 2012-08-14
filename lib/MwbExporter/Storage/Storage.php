@@ -128,7 +128,7 @@ abstract class Storage implements StorageInterface
      * @param string $content   The content
      * @return \MwbExporter\Storage\StorageInterface
      */
-    abstract function save($filename, $content);
+    public function save($filename, $content){}
 
     /**
      * Get result file name.

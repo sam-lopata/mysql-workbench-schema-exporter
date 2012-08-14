@@ -86,14 +86,14 @@ class Table extends Base
                     $_this->getColumns()->write($writer);
                 })
                 ->writeCallback(function(WriterInterface $writer, Table $_this = null) {
-                    if (count($_this->getRelations())) {
-                        $writer->write('relations:');
-                        $writer->indent();
+                  //if (count($_this->getRelations())) {
+                      //$writer->write('relations:');
+                      //$writer->indent();
                         foreach ($_this->getRelations() as $relation) {
                             $relation->write($writer);
                         }
-                        $writer->outdent();
-                    }
+                        //$writer->outdent();
+                        //}
                 })
                 ->writeCallback(function(WriterInterface $writer, Table $_this = null) {
                     if (count($_this->getIndexes())) {
